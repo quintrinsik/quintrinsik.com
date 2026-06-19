@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quintrinsik — Brand Kit v1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600;700;800;900&family=Onest:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --voltage:#2D5BFF;
+    --brass:#FFB81C;
+    --signal:#FF4D8D;
+    --mint:#06D6A0;
+    --violet:#8B5CF6;
+    --ink:#141225;
+    --bone:#FAF6EC;
+    --deep:#21185A;
+    --bone-2:#F0E9D8;
+    --ink-soft:#3a3556;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--bone);
+    color:var(--ink);
+    font-family:"Onest",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    font-weight:400;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+  h1,h2,h3,.display{font-family:"Gabarito","Onest",system-ui,sans-serif;}
+  .mono{font-family:"Geist Mono",ui-monospace,SFMono-Regular,Menlo,monospace;}
+
+  /* ---------- eyebrow / section scaffolding ---------- */
+  .eyebrow{
+    font-family:"Geist Mono",monospace;
+    font-size:12px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--ink-soft);
+    display:flex;align-items:center;gap:10px;margin:0 0 18px;
+  }
+  .eyebrow::before{content:"";width:26px;height:2px;background:var(--voltage);border-radius:2px}
+  section{padding:84px 0;border-top:1px solid var(--bone-2)}
+  section h2{font-size:clamp(28px,4vw,42px);font-weight:800;letter-spacing:-.02em;margin:0 0 14px}
+  .lede{font-size:18px;max-width:62ch;color:var(--ink-soft);margin:0 0 8px}
+
+  /* ---------- hero ---------- */
+  .hero{
+    border-top:none;
+    background:
+      radial-gradient(120% 90% at 78% 18%, rgba(45,91,255,.22), transparent 60%),
+      radial-gradient(90% 80% at 12% 92%, rgba(255,77,141,.16), transparent 55%),
+      linear-gradient(165deg,var(--deep),var(--ink) 70%);
+    color:var(--bone);
+    padding:0;
+    position:relative;overflow:hidden;
+  }
+  .hero .wrap{padding-top:72px;padding-bottom:80px;position:relative;z-index:2}
+  .hero-top{display:flex;justify-content:space-between;align-items:center;gap:16px;
+    font-family:"Geist Mono",monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:rgba(250,246,236,.6)}
+  .hero-core{display:flex;flex-direction:column;align-items:center;text-align:center;margin-top:54px}
+  .hero-mark{width:148px;height:148px;filter:drop-shadow(0 18px 50px rgba(45,91,255,.45))}
+  .hero h1{
+    font-size:clamp(52px,12vw,128px);font-weight:900;letter-spacing:-.035em;
+    margin:30px 0 0;line-height:.9;color:var(--bone);
+  }
+  .hero .sub{margin:20px 0 0;font-size:clamp(15px,2.4vw,19px);color:rgba(250,246,236,.78);max-width:48ch}
+  .chips{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:30px}
+  .chip{font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+    padding:7px 13px;border-radius:999px;border:1px solid rgba(250,246,236,.22);color:rgba(250,246,236,.82)}
+  .chip b{color:var(--bone);font-weight:500}
+
+  /* ---------- logo system ---------- */
+  .tile-row{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:8px}
+  .tile{aspect-ratio:1;border-radius:24px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+  .tile svg{width:62%;height:62%}
+  .tile .cap{position:absolute;left:14px;bottom:12px;font-family:"Geist Mono",monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase}
+  .t-spectrum{background:linear-gradient(160deg,var(--deep),var(--ink));}
+  .t-spectrum .cap{color:rgba(250,246,236,.55)}
+  .t-solid{background:var(--bone-2)}
+  .t-solid .cap{color:var(--ink-soft)}
+  .t-reversed{background:var(--voltage)}
+  .t-reversed .cap{color:rgba(255,255,255,.7)}
+  .t-ink{background:var(--ink)}
+  .t-ink .cap{color:rgba(250,246,236,.45)}
+
+  .lockups{display:grid;grid-template-columns:1.4fr 1fr;gap:18px;margin-top:34px}
+  .lock{border:1px solid var(--bone-2);border-radius:20px;padding:34px;display:flex;align-items:center;justify-content:center;background:#fff}
+  .lock.dark{background:var(--ink);border-color:transparent}
+  .lock-h{display:flex;align-items:center;gap:18px}
+  .lock-h svg{width:64px;height:64px;flex:none}
+  .lock-v{display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center}
+  .lock-v svg{width:72px;height:72px}
+  .wordmark{font-family:"Gabarito",sans-serif;font-weight:800;letter-spacing:-.03em;font-size:34px;color:var(--ink);line-height:1}
+  .wordmark.lg{font-size:40px}
+  .lock.dark .wordmark{color:var(--bone)}
+  .wordmark .tittle{color:var(--signal)}
+  .wordmark .tittle2{color:var(--mint)}
+
+  .meta-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:34px}
+  .card{border:1px solid var(--bone-2);border-radius:20px;padding:26px;background:#fff}
+  .card h3{font-size:16px;font-weight:700;margin:0 0 14px;letter-spacing:-.01em}
+  .clearbox{position:relative;background:var(--bone-2);border-radius:14px;padding:26px;display:flex;align-items:center;justify-content:center}
+  .clearbox .inner{position:relative;padding:22px}
+  .clearbox .inner::before{content:"";position:absolute;inset:0;border:1.5px dashed var(--voltage);border-radius:8px;opacity:.7}
+  .clearbox svg{width:74px;height:74px;display:block}
+  .sizes{display:flex;align-items:flex-end;gap:22px;justify-content:center;padding-top:8px}
+  .sizes .s{display:flex;flex-direction:column;align-items:center;gap:8px}
+  .sizes .s span{font-family:"Geist Mono",monospace;font-size:10px;color:var(--ink-soft);letter-spacing:.08em}
+
+  .donts{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:18px}
+  .dont{border:1px solid var(--bone-2);border-radius:16px;padding:18px;text-align:center;background:#fff}
+  .dont .box{height:74px;display:flex;align-items:center;justify-content:center;margin-bottom:10px}
+  .dont .box svg{width:54px;height:54px}
+  .dont p{margin:0;font-size:12.5px;color:var(--ink-soft)}
+  .dont .x{color:var(--signal);font-weight:700}
+
+  /* ---------- color ---------- */
+  .swatches{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:8px}
+  .sw{border-radius:18px;overflow:hidden;border:1px solid var(--bone-2);background:#fff}
+  .sw .chipc{height:118px;display:flex;align-items:flex-end;padding:12px}
+  .sw .chipc .link{font-family:"Geist Mono",monospace;font-size:10px;letter-spacing:.08em;background:rgba(20,18,37,.78);color:var(--bone);
+    padding:4px 8px;border-radius:999px}
+  .sw .body{padding:14px 16px 18px}
+  .sw .nm{font-family:"Gabarito",sans-serif;font-weight:700;font-size:16px}
+  .sw .hx{font-family:"Geist Mono",monospace;font-size:12px;color:var(--ink-soft);margin-top:2px}
+  .sw .role{font-size:12.5px;color:var(--ink-soft);margin-top:8px;line-height:1.4}
+  .sw.lead{grid-column:span 2}
+  .sw.lead .chipc{height:150px}
+
+  /* ---------- type ---------- */
+  .specimen{border:1px solid var(--bone-2);border-radius:20px;padding:30px;background:#fff;margin-top:18px}
+  .specimen + .specimen{margin-top:16px}
+  .spec-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+  .spec-head .role{font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--voltage)}
+  .spec-name{font-family:"Gabarito",sans-serif;font-weight:800;font-size:22px;letter-spacing:-.01em}
+  .spec-big{font-size:clamp(34px,6vw,60px);line-height:1.04;letter-spacing:-.02em;margin:0 0 6px}
+  .gabarito{font-family:"Gabarito",sans-serif}
+  .onest{font-family:"Onest",sans-serif}
+  .gmono{font-family:"Geist Mono",monospace}
+  .glyphs{font-size:20px;color:var(--ink-soft);margin-top:14px;letter-spacing:.02em}
+  .why{font-size:14px;color:var(--ink-soft);margin-top:16px;max-width:70ch}
+  .weights{display:flex;gap:18px;flex-wrap:wrap;margin-top:14px;font-size:22px}
+  .weights span{display:inline-block}
+
+  /* ---------- family resemblance ---------- */
+  .fam{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:8px}
+  .fam .panel{border:1px solid var(--bone-2);border-radius:20px;padding:28px;background:#fff}
+  .fam .panel.p{background:linear-gradient(160deg,#fbf8f1,#fff)}
+  .fam h3{font-family:"Gabarito";font-weight:800;font-size:20px;margin:0 0 6px}
+  .fam .tag{font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:18px}
+  .fam svg{width:100%;height:120px;margin:6px 0 16px}
+  .fam p{font-size:14px;color:var(--ink-soft);margin:0}
+  .links{margin-top:22px;border:1px solid var(--bone-2);border-radius:20px;overflow:hidden}
+  .links .lk{display:grid;grid-template-columns:160px 1fr;gap:0;border-top:1px solid var(--bone-2)}
+  .links .lk:first-child{border-top:none}
+  .links .lk .a{padding:16px 20px;font-family:"Gabarito";font-weight:700;background:var(--bone);font-size:14px}
+  .links .lk .b{padding:16px 20px;font-size:14px;color:var(--ink-soft)}
+  .links .lk .b b{color:var(--ink);font-weight:600}
+
+  /* ---------- footer ---------- */
+  footer{background:var(--ink);color:var(--bone);padding:60px 0}
+  footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:flex-end}
+  footer .voice{max-width:48ch}
+  footer .voice h2{color:var(--bone);font-size:26px;margin:0 0 10px}
+  footer .voice p{color:rgba(250,246,236,.7);margin:0;font-size:15px}
+  footer .meta{font-family:"Geist Mono",monospace;font-size:12px;letter-spacing:.1em;color:rgba(250,246,236,.5);text-align:right;line-height:1.9}
+  footer .meta svg{width:40px;height:40px;margin-bottom:10px}
+
+  /* load-in */
+  @keyframes settle{from{opacity:0;transform:rotate(-58deg) scale(.7)}to{opacity:1;transform:rotate(0) scale(1)}}
+  .hero-mark{animation:settle .9s cubic-bezier(.2,.8,.2,1) both;transform-origin:50% 50%}
+  @media (prefers-reduced-motion:reduce){.hero-mark{animation:none}}
+
+  @media(max-width:860px){
+    .tile-row{grid-template-columns:repeat(2,1fr)}
+    .lockups{grid-template-columns:1fr}
+    .meta-grid{grid-template-columns:1fr}
+    .swatches{grid-template-columns:repeat(2,1fr)}
+    .sw.lead{grid-column:span 2}
+    .donts{grid-template-columns:repeat(2,1fr)}
+    .fam{grid-template-columns:1fr}
+    .links .lk{grid-template-columns:1fr}
+    .links .lk .a{border-bottom:1px solid var(--bone-2)}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== SVG MASTER DEFS ===== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <!-- one faceted blade, pointing up, converging to centre -->
+    <path id="qk-blade" d="M57.5,37 L72,11.9 A44,44 0 0 1 28,11.9 L42.5,37 A15,15 0 0 0 57.5,37 Z"/>
+
+    <g id="qk-spectrum">
+      <use href="#qk-blade" fill="var(--voltage)"/>
+      <use href="#qk-blade" fill="var(--mint)"    transform="rotate(72 50 50)"/>
+      <use href="#qk-blade" fill="var(--brass)"   transform="rotate(144 50 50)"/>
+      <use href="#qk-blade" fill="var(--signal)"  transform="rotate(216 50 50)"/>
+      <use href="#qk-blade" fill="var(--violet)"  transform="rotate(288 50 50)"/>
+      <circle cx="50" cy="50" r="12.5" fill="var(--bone)"/>
+      <circle cx="50" cy="50" r="5.4"  fill="var(--brass)"/>
+    </g>
+
+    <g id="qk-solid">
+      <use href="#qk-blade" fill="var(--voltage)"/>
+      <use href="#qk-blade" fill="var(--voltage)" transform="rotate(72 50 50)"/>
+      <use href="#qk-blade" fill="var(--voltage)" transform="rotate(144 50 50)"/>
+      <use href="#qk-blade" fill="var(--voltage)" transform="rotate(216 50 50)"/>
+      <use href="#qk-blade" fill="var(--voltage)" transform="rotate(288 50 50)"/>
+      <circle cx="50" cy="50" r="12.5" fill="var(--bone)"/>
+      <circle cx="50" cy="50" r="5.4"  fill="var(--brass)"/>
+    </g>
+
+    <g id="qk-reversed">
+      <use href="#qk-blade" fill="var(--bone)"/>
+      <use href="#qk-blade" fill="var(--bone)" transform="rotate(72 50 50)"/>
+      <use href="#qk-blade" fill="var(--bone)" transform="rotate(144 50 50)"/>
+      <use href="#qk-blade" fill="var(--bone)" transform="rotate(216 50 50)"/>
+      <use href="#qk-blade" fill="var(--bone)" transform="rotate(288 50 50)"/>
+      <circle cx="50" cy="50" r="12.5" fill="var(--voltage)"/>
+      <circle cx="50" cy="50" r="5.4"  fill="var(--brass)"/>
+    </g>
+
+    <g id="qk-ink">
+      <use href="#qk-blade" fill="var(--ink)"/>
+      <use href="#qk-blade" fill="var(--ink)" transform="rotate(72 50 50)"/>
+      <use href="#qk-blade" fill="var(--ink)" transform="rotate(144 50 50)"/>
+      <use href="#qk-blade" fill="var(--ink)" transform="rotate(216 50 50)"/>
+      <use href="#qk-blade" fill="var(--ink)" transform="rotate(288 50 50)"/>
+      <circle cx="50" cy="50" r="12.5" fill="var(--bone)"/>
+      <circle cx="50" cy="50" r="5.4"  fill="var(--ink)"/>
+    </g>
+  </defs>
+</svg>
+
+<!-- ===== HERO ===== -->
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-top">
+      <span>Quintrinsik</span>
+      <span>Brand Kit · v1 · 2026</span>
+    </div>
+    <div class="hero-core">
+      <svg class="hero-mark" viewBox="0 0 100 100" role="img" aria-label="Quintrinsik mark"><use href="#qk-spectrum"/></svg>
+      <h1>quintrinsik</h1>
+      <p class="sub">Five facets, one core. Bright, bold, and built to feel like part of the family.</p>
+      <div class="chips">
+        <span class="chip">Display <b>Gabarito</b></span>
+        <span class="chip">Text <b>Onest</b></span>
+        <span class="chip">Mono <b>Geist Mono</b></span>
+        <span class="chip">Hero <b>#2D5BFF</b></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== LOGO ===== -->
+<section id="logo">
+  <div class="wrap">
+    <p class="eyebrow">01 — The mark</p>
+    <h2>A five-faceted core</h2>
+    <p class="lede">Five blades sweep inward and meet at one bright centre. Quint for the five, intrinsic for the core they form. It carries the same converging-into-one idea as the Perpensa marks, drawn in a brighter, rounder, more playful hand.</p>
+
+    <div class="tile-row">
+      <div class="tile t-spectrum"><svg viewBox="0 0 100 100"><use href="#qk-spectrum"/></svg><span class="cap">Spectrum</span></div>
+      <div class="tile t-solid"><svg viewBox="0 0 100 100"><use href="#qk-solid"/></svg><span class="cap">Solid</span></div>
+      <div class="tile t-reversed"><svg viewBox="0 0 100 100"><use href="#qk-reversed"/></svg><span class="cap">Reversed</span></div>
+      <div class="tile t-ink"><svg viewBox="0 0 100 100"><use href="#qk-reversed"/></svg><span class="cap">Mono / dark</span></div>
+    </div>
+
+    <div class="lockups">
+      <div class="lock">
+        <div class="lock-h">
+          <svg viewBox="0 0 100 100"><use href="#qk-spectrum"/></svg>
+          <span class="wordmark lg">qu<span class="tittle">i</span>ntr<span class="tittle2">i</span>nsik</span>
+        </div>
+      </div>
+      <div class="lock dark">
+        <div class="lock-v">
+          <svg viewBox="0 0 100 100"><use href="#qk-reversed"/></svg>
+          <span class="wordmark">qu<span class="tittle">i</span>ntr<span class="tittle2">i</span>nsik</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="meta-grid">
+      <div class="card">
+        <h3>Clear space</h3>
+        <div class="clearbox"><div class="inner"><svg viewBox="0 0 100 100"><use href="#qk-solid"/></svg></div></div>
+        <p class="why">Keep padding equal to the core diameter on every side. Nothing crowds the mark.</p>
+      </div>
+      <div class="card">
+        <h3>Minimum size</h3>
+        <div class="clearbox" style="background:#fff;border:1px solid var(--bone-2)">
+          <div class="sizes">
+            <div class="s"><svg viewBox="0 0 100 100" style="width:74px;height:74px"><use href="#qk-solid"/></svg><span>App · 64px+</span></div>
+            <div class="s"><svg viewBox="0 0 100 100" style="width:40px;height:40px"><use href="#qk-solid"/></svg><span>UI · 28px+</span></div>
+            <div class="s"><svg viewBox="0 0 100 100" style="width:20px;height:20px"><use href="#qk-solid"/></svg><span>Favicon · 16px</span></div>
+          </div>
+        </div>
+        <p class="why">Below 28px, drop to the solid one-colour build so the facets stay legible.</p>
+      </div>
+    </div>
+
+    <div class="donts">
+      <div class="dont"><div class="box"><svg viewBox="0 0 100 140" preserveAspectRatio="none"><g transform="scale(1,1.4)"><use href="#qk-solid"/></g></svg></div><p><span class="x">Don't</span> stretch or squash</p></div>
+      <div class="dont"><div class="box"><svg viewBox="0 0 100 100" style="filter:drop-shadow(3px 4px 0 var(--signal))"><use href="#qk-solid"/></svg></div><p><span class="x">Don't</span> add shadows or effects</p></div>
+      <div class="dont"><div class="box"><svg viewBox="0 0 100 100" style="transform:rotate(24deg)"><use href="#qk-spectrum"/></svg></div><p><span class="x">Don't</span> rotate the mark</p></div>
+      <div class="dont"><div class="box" style="background:linear-gradient(45deg,#999,#ddd);border-radius:10px"><svg viewBox="0 0 100 100"><use href="#qk-spectrum"/></svg></div><p><span class="x">Don't</span> sit spectrum on busy fills</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== COLOR ===== -->
+<section id="color">
+  <div class="wrap">
+    <p class="eyebrow">02 — Colour</p>
+    <h2>Loud on purpose</h2>
+    <p class="lede">Electric blue anchors it so the brights never tip into noise. Amber, pink, mint, and violet carry the game-grade energy. Two of them are quiet hand-offs from Perpensa.</p>
+
+    <div class="swatches">
+      <div class="sw lead">
+        <div class="chipc" style="background:var(--voltage)"></div>
+        <div class="body">
+          <div class="nm">Voltage</div>
+          <div class="hx">#2D5BFF</div>
+          <div class="role">The anchor. Primary brand colour, key actions, and the calm centre that lets the rest shout.</div>
+        </div>
+      </div>
+      <div class="sw">
+        <div class="chipc" style="background:var(--brass)"><span class="link">↩ Perpensa · brass</span></div>
+        <div class="body"><div class="nm">Brass Spark</div><div class="hx">#FFB81C</div><div class="role">Warm highlight and the mark's core. Perpensa brass, brightened.</div></div>
+      </div>
+      <div class="sw">
+        <div class="chipc" style="background:var(--signal)"><span class="link">↩ Perpensa · signal</span></div>
+        <div class="body"><div class="nm">Signal Pink</div><div class="hx">#FF4D8D</div><div class="role">Alerts, accents, energy. Perpensa signal, turned up.</div></div>
+      </div>
+      <div class="sw">
+        <div class="chipc" style="background:var(--mint)"></div>
+        <div class="body"><div class="nm">Mint Charge</div><div class="hx">#06D6A0</div><div class="role">Success, fresh states, the cool pop in the spectrum.</div></div>
+      </div>
+      <div class="sw">
+        <div class="chipc" style="background:var(--violet)"></div>
+        <div class="body"><div class="nm">Quint Violet</div><div class="hx">#8B5CF6</div><div class="role">Fifth facet. Depth, gradients, and playful secondary moments.</div></div>
+      </div>
+      <div class="sw">
+        <div class="chipc" style="background:var(--ink)"></div>
+        <div class="body"><div class="nm">Core Ink</div><div class="hx">#141225</div><div class="role">Text and dark surfaces. Warm near-black, never flat #000.</div></div>
+      </div>
+      <div class="sw">
+        <div class="chipc" style="background:var(--bone);border-bottom:1px solid var(--bone-2)"></div>
+        <div class="body"><div class="nm">Bone</div><div class="hx">#FAF6EC</div><div class="role">Paper and light surfaces. Warm white that ties back to the brass.</div></div>
+      </div>
+      <div class="sw">
+        <div class="chipc" style="background:var(--deep)"></div>
+        <div class="body"><div class="nm">Deep Quint</div><div class="hx">#21185A</div><div class="role">Indigo for dark gradients and the bottom of the hero.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TYPE ===== -->
+<section id="type">
+  <div class="wrap">
+    <p class="eyebrow">03 — Typeface</p>
+    <h2>Friendly, with a spine</h2>
+    <p class="lede">Wide appeal, not yet everywhere. All three are open-source and free to ship.</p>
+
+    <div class="specimen">
+      <div class="spec-head">
+        <span class="spec-name">Gabarito</span>
+        <span class="role">Display / logo</span>
+      </div>
+      <p class="spec-big gabarito" style="font-weight:900">Bright by design</p>
+      <div class="weights gabarito">
+        <span style="font-weight:400">Regular</span>
+        <span style="font-weight:600">Semibold</span>
+        <span style="font-weight:800">Extrabold</span>
+        <span style="font-weight:900">Black</span>
+      </div>
+      <p class="glyphs gabarito">ABCDEFGHIJKLMNOPQRSTUVWXYZ · abcdefghijklmnopqrstuvwxyz · 0123456789</p>
+      <p class="why">Gabarito has the rounded warmth game brands lean on, but more backbone and less nursery than Fredoka or Poppins. It is free under the Open Font License and still uncommon, so it reads as a choice rather than a default. Use Black for the wordmark and big headlines, Extrabold for section heads.</p>
+    </div>
+
+    <div class="specimen">
+      <div class="spec-head">
+        <span class="spec-name">Onest</span>
+        <span class="role">Body / interface</span>
+      </div>
+      <p class="spec-big onest" style="font-weight:500;font-size:clamp(26px,4.5vw,40px)">Clear at any size, calm under the brights.</p>
+      <div class="weights onest">
+        <span style="font-weight:300">Light</span>
+        <span style="font-weight:400">Regular</span>
+        <span style="font-weight:500">Medium</span>
+        <span style="font-weight:700">Bold</span>
+      </div>
+      <p class="why">A fresh, neutral humanist sans that stays out of the way in long copy and dense UI. Pairs with Gabarito without competing, and it is nowhere near as worn as Inter.</p>
+    </div>
+
+    <div class="specimen">
+      <div class="spec-head">
+        <span class="spec-name">Geist Mono</span>
+        <span class="role">Utility / data</span>
+      </div>
+      <p class="spec-big gmono" style="font-weight:500;font-size:clamp(22px,3.6vw,34px)">v1 · #2D5BFF · 100% core</p>
+      <p class="glyphs gmono">0123456789 · {} [] () · &lt;/&gt; · ABCDEF</p>
+      <p class="why">For hex values, labels, code, and fine print. This is also the deliberate tie to Perpensa, which runs Geist Mono in its Counterweight system. Same mono across both brands is a resemblance only you and your team will clock.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAMILY ===== -->
+<section id="family">
+  <div class="wrap">
+    <p class="eyebrow">04 — Family resemblance</p>
+    <h2>Sneaky close to Perpensa</h2>
+    <p class="lede">Not a copy. A shared idea, drawn twice. Both brands are about separate things becoming one.</p>
+
+    <div class="fam">
+      <div class="panel p">
+        <h3>Perpensa</h3>
+        <div class="tag">Converge · streams meet</div>
+        <svg viewBox="0 0 200 120" aria-hidden="true">
+          <g fill="none" stroke="var(--ink-soft)" stroke-width="3" stroke-linecap="round">
+            <path d="M20,20 C70,30 90,55 100,60"/>
+            <path d="M20,60 C70,60 90,60 100,60"/>
+            <path d="M20,100 C70,90 90,65 100,60"/>
+          </g>
+          <circle cx="100" cy="60" r="9" fill="var(--brass)"/>
+          <path d="M109,60 C140,60 160,60 182,60" fill="none" stroke="var(--ink)" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+        <p>Separate lines of thought flow together and leave as one weighed conclusion. Brass core, mono detailing, muted metal palette.</p>
+      </div>
+      <div class="panel">
+        <h3>Quintrinsik</h3>
+        <div class="tag">Five facets · one core</div>
+        <svg viewBox="0 0 200 120" aria-hidden="true">
+          <g transform="translate(100,60) scale(.92)"><g transform="translate(-50,-50)"><use href="#qk-spectrum"/></g></g>
+        </svg>
+        <p>The same convergence, turned radial and lit up. Five blades, one bright core, full-spectrum energy. Brass core kept, so the two share a heartbeat.</p>
+      </div>
+    </div>
+
+    <div class="links">
+      <div class="lk"><div class="a">Convergence</div><div class="b">Perpensa's <b>meeting point</b> becomes Quintrinsik's <b>radial core</b>. Same concept, different geometry.</div></div>
+      <div class="lk"><div class="a">Brass → Brass</div><div class="b">The core stays <b>#FFB81C</b> in both. Identical warm centre, so they feel related at a glance.</div></div>
+      <div class="lk"><div class="a">Signal → Pink</div><div class="b">Perpensa's signal accent reappears, brightened, as <b>Signal Pink</b>.</div></div>
+      <div class="lk"><div class="a">Geist Mono</div><div class="b">The exact same utility face runs through both systems. A quiet shared fingerprint.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="wrap">
+    <div class="voice">
+      <h2>Voice</h2>
+      <p>Plain verbs, sentence case, a little spark. Quintrinsik talks like a sharp friend who happens to be great at getting things done. Bright, never loud for its own sake.</p>
+    </div>
+    <div class="meta">
+      <svg viewBox="0 0 100 100"><use href="#qk-reversed"/></svg>
+      <div>QUINTRINSIK</div>
+      <div>BRAND KIT · V1</div>
+      <div>QUINTRINSIK.COM</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
