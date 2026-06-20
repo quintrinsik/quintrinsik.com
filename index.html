@@ -40,15 +40,6 @@
   .pill{font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
     padding:9px 15px;border-radius:999px;border:1px solid rgba(250,246,236,.22);color:rgba(250,246,236,.85);display:flex;gap:8px;align-items:center}
   .pill::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--mint)}
-  .cta{margin-top:38px;display:flex;flex-direction:column;align-items:center;gap:14px}
-  .notify{
-    font-family:"Gabarito",sans-serif;font-weight:800;font-size:16px;letter-spacing:-.01em;
-    text-decoration:none;color:var(--ink);background:var(--brass);border:0;cursor:pointer;
-    padding:15px 26px;border-radius:14px;transition:transform .15s ease, box-shadow .15s ease;
-    box-shadow:0 10px 30px rgba(255,184,28,.28);
-  }
-  .notify:hover{transform:translateY(-2px);box-shadow:0 14px 36px rgba(255,184,28,.4)}
-  .notify:focus-visible{outline:3px solid var(--bone);outline-offset:3px}
   .foot{text-align:center;padding:24px;color:rgba(250,246,236,.4)}
   @keyframes settle{from{opacity:0;transform:rotate(-58deg) scale(.7)}to{opacity:1;transform:rotate(0) scale(1)}}
   @media (prefers-reduced-motion:reduce){.mark{animation:none}}
@@ -94,29 +85,9 @@
     <span class="pill">iOS</span>
     <span class="pill">Android</span>
   </div>
-
-  <div class="cta">
-    <button class="notify" id="notify" type="button">Tell me when it's live</button>
-  </div>
 </main>
 
 <div class="foot">quintrinsik · 2026</div>
-
-<script>
-  // The address is assembled only at the moment of a click. No mailto link and no
-  // email string ever sits in the markup or the resting DOM for a scraper to read.
-  (function(){
-    var notify = document.getElementById("notify");
-    if(!notify) return;
-    notify.addEventListener("click", function(){
-      var user = "info";
-      var domain = ["intrinsik", "com"].join(".");
-      var addr = user + String.fromCharCode(64) + domain; // 64 = "@"
-      window.location.href = "mailto:" + addr +
-        "?subject=" + encodeURIComponent("Notify me when Quintrinsik launches");
-    });
-  })();
-</script>
 
 </body>
 </html>
